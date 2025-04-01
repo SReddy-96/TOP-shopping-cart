@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import ErrorPage from "./error-page";
 
 const useProduct = () => {
   const [items, setItems] = useState([]);

@@ -28,7 +28,7 @@ function Product() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("'https://fakestoreapi.com/products'", { mode: "cors" })
+    fetch("https://fakestoreapi.com/products", { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
@@ -75,3 +75,13 @@ Setting loading and error pages to handle these
   - This will be the home page and be set as the default
 - ShoppingPage
   - This will display the items in cards . taking in an array as
+- ShoppingCart
+  - The cart state is found in root which is passed to outlet via context. 
+  - The cart with display the users items with price including VAT and total
+- Nav
+  - this will show the 3 pages with the cart in the right corner and the home, shop and about  in the middle.
+- About
+  - Just basic about me page with images and generic paragraph about company
+- Footer 
+  - creating a good footer with links to different pages, terms and other important things. not actually setting the links up
+- 
