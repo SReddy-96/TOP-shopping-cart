@@ -1,5 +1,5 @@
-import ErrorPage from "../error-page";
-import useProduct from "../productFetch";
+import ErrorPage from "../../error-page";
+import useProduct from "../../productFetch";
 
 function ShoppingPage() {
   const { items, loading, error } = useProduct();

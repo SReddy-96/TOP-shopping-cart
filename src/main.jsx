@@ -2,11 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import ErrorPage from "./error-page";
-import Root from "./routes/root";
+import Root from "./components/root/root";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Index from "./routes";
-import ShoppingPage from "./routes/shoppingPage";
-import ShoppingCart from "./routes/shoppingCart";
+import Index from "./components/index";
+import ShoppingPage from "./components/shoppingPage/shoppingPage";
+import ShoppingCart from "./components/shoppingCart/shoppingCart";
 
 const router = createBrowserRouter([
   {
