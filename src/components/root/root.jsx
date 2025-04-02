@@ -3,10 +3,8 @@ import { Outlet } from "react-router-dom";
 import Nav from "../nav/nav";
 
 function Root() {
-  const { cartItems, setCartItems } = useState([
-    { hello: "hello" },
-    { bye: "bye" },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <>
       <Nav cartItems={cartItems} />

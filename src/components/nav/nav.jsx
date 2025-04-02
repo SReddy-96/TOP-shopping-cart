@@ -1,7 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./nav.module.css";
 
 function Nav({ cartItems }) {
+  const location = useLocation();
+  const isCartPage = location.pathname === "/cart";
+
   return (
     <div className={styles.nav}>
       <div className={styles.logo}>
@@ -80,8 +83,11 @@ function Nav({ cartItems }) {
               strokeLinecap="round"
             />
           </svg>
-          <span className={styles.cartCount}>{cartItems}</span>
         </NavLink>
+        {/* only show if there are items */}
+        {cartItems.length > 0 && !isCartPage && (
+          <span className={styles.cartCount}>{cartItems.length}</span>
+        )}
       </div>
     </div>
   );

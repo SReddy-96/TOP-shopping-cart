@@ -16,7 +16,7 @@
 .link {
   text-decoration: none;
   color: black;
-  transition: font-size 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
 }
 
 .cart {
@@ -25,15 +25,26 @@
 }
 
 .link:hover {
-  font-size: 1.3em;
+  background: rgba(128, 128, 128, 0.05);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
 }
 
 .active {
   text-decoration: none;
   color: black;
-  transition: font-size 0.3s ease;
   background: rgba(128, 128, 128, 0.12);
   padding: 0.5rem 1rem;
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.cartCount {
+  font-size: smaller;
+  background: rgb(62, 171, 243);
+  border-radius: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  font-weight: 600;
 }

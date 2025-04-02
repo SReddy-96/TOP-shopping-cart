@@ -1,0 +1,25 @@
+.shopContent {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 5rem;
+}
+
+.itemCard {
+  border: 1px solid black;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 5fr 3fr 1fr;
+}
+
+.shopTitle {
+  padding: 1rem;
+  text-align: center;
+}
+
+.shopLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem;
+}
