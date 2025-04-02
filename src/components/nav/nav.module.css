@@ -4,6 +4,9 @@
   align-items: center;
   justify-items: center;
   height: 12vh;
+  position: sticky;
+  top: 0;
+  background-color: rgb(250, 250, 250);
 }
 
 .pages {

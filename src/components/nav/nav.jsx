@@ -5,6 +5,14 @@ function Nav({ cartItems }) {
   const location = useLocation();
   const isCartPage = location.pathname === "/cart";
 
+  const cartAmount = () => {
+    let amount = 0;
+    cartItems.map((item) => {
+      amount += item.quantity;
+    });
+    return amount;
+  };
+
   return (
     <div className={styles.nav}>
       <div className={styles.logo}>
@@ -86,7 +94,7 @@ function Nav({ cartItems }) {
         </NavLink>
         {/* only show if there are items */}
         {cartItems.length > 0 && !isCartPage && (
-          <span className={styles.cartCount}>{cartItems.length}</span>
+          <span className={styles.cartCount}>{cartAmount()}</span>
         )}
       </div>
     </div>

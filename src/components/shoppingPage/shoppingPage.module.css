@@ -1,7 +1,7 @@
 .shopContent {
   padding: 5rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 5rem;
 }
 
@@ -9,7 +9,8 @@
   border: 1px solid black;
   padding: 2rem;
   display: grid;
-  grid-template-rows: 1fr 5fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+  text-align: center;
 }
 
 .shopTitle {
@@ -22,4 +23,22 @@
   align-items: center;
   justify-content: center;
   padding: 10rem;
+}
+
+.rating {
+  display: flex;
+}
+
+.ratingPrice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.itemImage {
+  width: 150px;
+  height: auto;
+  align-self: center;
+  justify-self: center;
 }
