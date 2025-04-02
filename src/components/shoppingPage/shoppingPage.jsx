@@ -14,7 +14,11 @@ function ShoppingPage() {
           <p>{item.title}</p>
           <img src={item.image} alt={item.title} />
           <p>{item.description}</p>
-          <button type="submit">Add to cart</button>
+          <button
+            type="submit"
+          >
+            Add to cart
+          </button>
         </div>
       ))}
     </>

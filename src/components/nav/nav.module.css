@@ -3,21 +3,37 @@
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   justify-items: center;
-  height: 10vh;
+  height: 12vh;
 }
 
 .pages {
   width: 60%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .link {
   text-decoration: none;
   color: black;
-  transition: 0.5s ease;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
 }
 
 .link:hover {
-  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.active {
+  text-decoration: none;
+  color: black;
+  transition: font-size 0.3s ease;
+  background: rgba(128, 128, 128, 0.12);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
