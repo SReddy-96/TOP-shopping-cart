@@ -2,7 +2,6 @@ import { useOutletContext } from "react-router-dom";
 
 function ShoppingCart() {
   const { cartItems, setCartItems } = useOutletContext();
-  console.log(cartItems)
 
   const totalPrice = () => {
     let total = 0;

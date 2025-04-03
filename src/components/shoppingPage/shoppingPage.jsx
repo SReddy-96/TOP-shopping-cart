@@ -1,14 +1,14 @@
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import ErrorPage from "../../error-page";
 import useProduct from "../../productFetch";
 import styles from "./shoppingPage.module.css";
+import Buttons from "../../styles/Buttons.module.css";
 import { useState } from "react";
 
 function ShoppingPage() {
   const { items, loading, error } = useProduct();
   const { cartItems, setCartItems } = useOutletContext();
   const [quantity, setQuantity] = useState(1);
-  const navigate = useNavigate();
 
   if (loading) return <h1 className={styles.shopLoading}>Loading...</h1>;
   if (error) throw error;
@@ -25,7 +25,6 @@ function ShoppingPage() {
         return item;
       });
       setCartItems(updatedCartItems);
-      navigate("/cart");
     } else {
       // Product not in cart
       setCartItems([...cartItems, { ...product, quantity }]);
@@ -66,20 +65,22 @@ function ShoppingPage() {
               </div>
               <p>£{item.price.toFixed(2)}</p>
             </div>
-            <input
-              type="number"
-              name="quantity"
-              id="quantity"
-              defaultValue="1"
-              min="1"
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
-            />
-            <button
-              type="submit"
-              onClick={(e) => handleClick(e, item, quantity)}
-            >
-              Add to cart
-            </button>
+            <div className={styles.inputCnt}>
+              <input
+                type="number"
+                name="quantity"
+                defaultValue="1"
+                min="1"
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+              />
+              <button
+                type="submit"
+                onClick={(e) => handleClick(e, item, quantity)}
+                className={Buttons.primary}
+              >
+                Add to cart
+              </button>
+            </div>
           </div>
         ))}
       </div>
