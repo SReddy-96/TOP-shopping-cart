@@ -14,6 +14,31 @@ function ShoppingCart() {
   };
 
   // write function handle change of the quantity of each item
+  const handleChange = (event, product, quantity) => {
+    event.preventDefault();
+    const check = cartItems.find((item) => item.id === product.id);
+    const errorSpan =
+      event.target.nextElementSibling || event.target.previousElementSibling;
+
+    // check if quantity is valid
+    if (quantity < 1 || !quantity) {
+      errorSpan.textContent = "Quantity needs to be more than 0";
+      return;
+    } else {
+      errorSpan.textContent = "";
+    }
+    if (check) {
+      const updatedCartItems = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: quantity };
+        }
+        return item;
+      });
+      setCartItems(updatedCartItems);
+    } else {
+      throw Error;
+    }
+  };
 
   // function to handle the removing of an item
   const handleRemove = (event, product) => {
@@ -30,23 +55,47 @@ function ShoppingCart() {
   return (
     <div className={styles.cartWrapper}>
       <h1 className={styles.cartTitle}>Cart</h1>
-      {cartItems.map((item) => (
-        <div key={item.id} className={styles.cartCard}>
-          <img src={item.image} alt={item.title} className={styles.itemImage} />
-          <div className={styles.cartInfo}>
-            <p>{item.title}</p>
-            <p>Quantity: {item.quantity}</p>
-            <p>Price: £{item.price.toFixed(2)}</p>
-            <button
-              type="button"
-              className={Button.danger}
-              onClick={(e) => handleRemove(e, item)}
-            >
-              Remove
-            </button>
+      {cartItems.length > 0 ? (
+        cartItems.map((item) => (
+          <div key={item.id} className={styles.cartCard}>
+            <img
+              src={item.image}
+              alt={item.title}
+              className={styles.itemImage}
+            />
+            <div className={styles.cartInfo}>
+              <p>{item.title}</p>
+
+              <label htmlFor={item.id}>
+                Quantity:
+                <input
+                  id={item.id}
+                  type="number"
+                  name="quantity"
+                  defaultValue={item.quantity}
+                  className={styles.quantityInput}
+                  min="1"
+                  required
+                  onChange={(e) =>
+                    handleChange(e, item, parseInt(e.target.value))
+                  }
+                />
+                <span className={styles.errorSpan}></span>
+              </label>
+              <p>Price: £{item.price.toFixed(2)}</p>
+              <button
+                type="button"
+                className={Button.danger}
+                onClick={(e) => handleRemove(e, item)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      ) : (
+        <h2 className={styles.noItems}>No items</h2>
+      )}
       Total: £{totalPrice().toFixed(2)}
     </div>
   );

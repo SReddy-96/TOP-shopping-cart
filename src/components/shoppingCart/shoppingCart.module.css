@@ -1,5 +1,8 @@
 .cartWrapper {
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .cartCard {
@@ -7,6 +10,8 @@
   grid-template-columns: 1fr 4fr;
   border-bottom: 1px solid black;
   padding: 2rem;
+  gap: 2rem;
+  width: fit-content;
 }
 
 .cartTitle {
@@ -17,6 +22,7 @@
 .cartInfo {
   display: grid;
   grid-template-rows: repeat(auto);
+  gap: 1rem;
 }
 
 .itemImage {
@@ -29,4 +35,20 @@
 .cartInfo > button {
   width: 100px;
   height: fit-content;
+}
+
+.noItems {
+  text-align: center;
+  padding: 5rem 0rem;
+}
+
+.quantityInput {
+  width: 50px;
+  margin-left: 1rem;
+}
+
+.errorSpan {
+  font-size: smaller;
+  color: red;
+  padding-left: 1rem;
 }
