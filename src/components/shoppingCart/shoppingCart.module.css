@@ -1,0 +1,32 @@
+.cartWrapper {
+  padding: 2rem;
+}
+
+.cartCard {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  border-bottom: 1px solid black;
+  padding: 2rem;
+}
+
+.cartTitle {
+  padding: 1rem;
+  text-align: center;
+}
+
+.cartInfo {
+  display: grid;
+  grid-template-rows: repeat(auto);
+}
+
+.itemImage {
+  width: 150px;
+  height: auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.cartInfo > button {
+  width: 100px;
+  height: fit-content;
+}

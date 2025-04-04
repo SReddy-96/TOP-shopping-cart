@@ -79,9 +79,11 @@ Setting loading and error pages to handle these
   - The cart state is found in root which is passed to outlet via context. 
   - The cart with display the users items with price including VAT and total
 - Nav
-  - this will show the 3 pages with the cart in the right corner and the home, shop and about  in the middle.
+  - this will show the 4 pages with the cart in the right corner and the home, shop and about  in the middle.
 - About
   - Just basic about me page with images and generic paragraph about company
 - Footer 
   - creating a good footer with links to different pages, terms and other important things. not actually setting the links up
-- 
+- Testing
+  - Using Vitest to test the API and the filling of components
+  - Make sure the state is being filled and passed between components
