@@ -1,18 +1,20 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./nav.module.css";
 import Buttons from "../../styles/Buttons.module.css";
+import { useState } from "react";
 
 function Nav({ cartItems }) {
   const location = useLocation();
   const isCartPage = location.pathname === "/cart";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  function openNav() {
-    document.getElementById("pages").style.width = "300px";
-  }
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-  function closeNav() {
-    document.getElementById("pages").style.width = "0";
-  }
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   const cartAmount = () => {
     let amount = 0;
@@ -27,32 +29,34 @@ function Nav({ cartItems }) {
       <div className={styles.logo}>
         <h1>TOA</h1>
       </div>
-      <button className={styles.burger} onClick={() => openNav()}>
-        =
+      <button className={styles.burger} onClick={toggleMobileMenu}>
+        ☰
       </button>
-      <div className={styles.pages} id="pages">
-        <a
-          href="javascript:void(0)"
-          className="closeNav"
-          onClick={() => closeNav()}
-        >
+      <div
+        className={`${styles.pages} ${isMobileMenuOpen ? styles.open : ""}`}
+        id="pages"
+      >
+        <div className={styles.closeNav} onClick={toggleMobileMenu}>
           &times;
-        </a>
+        </div>
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          onClick={closeMobileMenu}
         >
           Home
         </NavLink>
         <NavLink
           to="shop"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          onClick={closeMobileMenu}
         >
           Shop
         </NavLink>
         <NavLink
           to="about"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          onClick={closeMobileMenu}
         >
           About
         </NavLink>
