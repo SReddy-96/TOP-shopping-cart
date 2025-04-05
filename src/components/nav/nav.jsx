@@ -1,9 +1,18 @@
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./nav.module.css";
+import Buttons from "../../styles/Buttons.module.css";
 
 function Nav({ cartItems }) {
   const location = useLocation();
   const isCartPage = location.pathname === "/cart";
+
+  function openNav() {
+    document.getElementById("pages").style.width = "300px";
+  }
+
+  function closeNav() {
+    document.getElementById("pages").style.width = "0";
+  }
 
   const cartAmount = () => {
     let amount = 0;
@@ -18,7 +27,17 @@ function Nav({ cartItems }) {
       <div className={styles.logo}>
         <h1>TOA</h1>
       </div>
-      <div className={styles.pages}>
+      <button className={styles.burger} onClick={() => openNav()}>
+        =
+      </button>
+      <div className={styles.pages} id="pages">
+        <a
+          href="javascript:void(0)"
+          className="closeNav"
+          onClick={() => closeNav()}
+        >
+          &times;
+        </a>
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
