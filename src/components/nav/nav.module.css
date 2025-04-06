@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   justify-items: center;
-  height: 12vh;
+  height: 20vh;
   position: sticky;
   top: 0;
   background-color: rgb(250, 250, 250);
@@ -82,6 +82,7 @@
   }
   .nav {
     grid-template-columns: 3fr 1fr 1fr;
+    height: 12vh;
   }
   .pages {
     width: 100%;
@@ -106,3 +107,4 @@
     padding-right: 2px;
   }
 }
+
