@@ -1,28 +1,51 @@
-.contentWrapper {
-  overflow: hidden; /* Hide content that scrolls out of view */
-  white-space: nowrap; /* Prevent reviews from wrapping to the next line */
-  height: 300px;
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.contentHolder {
-  display: inline-block; /* Make it wide but only take up necessary width */
-  padding-left: 100%; /* Start off-screen to the right */
-  animation: scrollBanner 20s linear infinite; /* Adjust duration as needed */
+.carouselHolder {
+  text-align: center;
+  transition: opacity 0.5s ease;
+  border: 1px solid grey;
+  padding: 2rem;
+  background-color: rgb(240, 240, 240);
+  border-radius: 20px;
+  width: 500px;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.contentItem {
-  display: inline-block; 
-  margin-right: 30px; 
-  /* Styles for individual reviews */
+.carouselHolder > p {
+  margin-bottom: 1rem;
 }
 
-@keyframes scrollBanner {
-  0% {
-    transform: translateX(
-      0%
-    ); /* Start position (off-screen right due to padding) */
-  }
-  100% {
-    transform: translateX(-100%); /* End position (off-screen left) */
-  }
+.next,
+.prev {
+  position: relative;
+  align-self: center;
+  border-radius: 10px;
+  color: black;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.next:hover,
+.prev:hover {
+  background: rgba(128, 128, 128, 0.6);
+  color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.prev {
+  right: 15px;
+}
+
+.next {
+  left: 15px;
 }

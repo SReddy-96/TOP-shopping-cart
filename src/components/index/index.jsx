@@ -3,28 +3,28 @@ import Carousel from "../carousel/carousel";
 
 const contents = [
   {
-    text: "review 1",
-    reviewer: "steve",
+    text: "This product exceeded my expectations, the quality is fantastic!",
+    author: "Alice Brown",
   },
   {
-    text: "review 2",
-    reviewer: "steve",
+    text: "Fast shipping and excellent customer service. Will definitely shop here again.",
+    author: "John Smith",
   },
   {
-    text: "review 3",
-    reviewer: "steve",
+    text: "The item arrived on time and was exactly as described. Very happy with my purchase.",
+    author: "Emily Johnson",
   },
   {
-    text: "review 4",
-    reviewer: "steve",
+    text: "I love this store! Great selection and affordable prices.",
+    author: "Michael Davis",
   },
   {
-    text: "review 5",
-    reviewer: "steve",
+    text: "Fantastic experience! The product works perfectly and was easy to set up.",
+    author: "Sarah Williams",
   },
   {
-    text: "review 6",
-    reviewer: "steve",
+    text: "Very satisfied with my purchase. The quality is top-notch and the delivery was quick.",
+    author: "James Wilson",
   },
 ];
 
