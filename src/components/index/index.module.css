@@ -1,3 +1,9 @@
+.indexWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title {
   position: absolute;
   top: 50%;
@@ -7,6 +13,52 @@
   font-weight: bold;
 }
 
-.image {
-  width: 100vw;
+.imageContainer {
+  width: 100%;
+  height: 88vh;
+  overflow: hidden;
 }
+
+.image {
+  width: 200%;
+  height: 200%;
+  transform-origin: center center;
+  object-fit: cover;
+}
+
+.headline {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid rgba(62, 171, 243, 0.3);
+  background-color: rgb(240, 240, 240);
+  width: fit-content;
+  position: relative;
+  top: -2rem;
+  border-radius: 20px;
+  box-shadow: rgba(62, 171, 243, 0.3) 0px 0px 0px 3px;
+  margin: 0 1rem;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.descriptionImage {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.descriptionText {
+  padding: 3rem;
+}
+

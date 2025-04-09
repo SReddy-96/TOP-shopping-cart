@@ -1,0 +1,28 @@
+.contentWrapper {
+  overflow: hidden; /* Hide content that scrolls out of view */
+  white-space: nowrap; /* Prevent reviews from wrapping to the next line */
+  height: 300px;
+}
+
+.contentHolder {
+  display: inline-block; /* Make it wide but only take up necessary width */
+  padding-left: 100%; /* Start off-screen to the right */
+  animation: scrollBanner 20s linear infinite; /* Adjust duration as needed */
+}
+
+.contentItem {
+  display: inline-block; 
+  margin-right: 30px; 
+  /* Styles for individual reviews */
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(
+      0%
+    ); /* Start position (off-screen right due to padding) */
+  }
+  100% {
+    transform: translateX(-100%); /* End position (off-screen left) */
+  }
+}
