@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   height: 60vh;
-  background-image: url("./images/about-hero.jpg");
+  background-image: url("/images/about-hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
