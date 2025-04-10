@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 import Carousel from "../carousel/carousel";
 import useProduct from "../../productFetch";
 import { useNavigate } from "react-router";
+import Buttons from "../../styles/Buttons.module.css";
 
 const contents = [
   {
@@ -79,10 +80,12 @@ function Index() {
                 alt={item.title}
                 className={styles.BSImage}
               />
+              <p className={styles.BSPrice}>£{item.price.toFixed(2)}</p>
             </div>
           ))}
         </div>
         <button
+          className={Buttons.primary}
           onClick={() => {
             navigate("/shop");
           }}

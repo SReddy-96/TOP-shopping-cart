@@ -13,6 +13,14 @@ function ShoppingCart() {
     return total;
   };
 
+  const totalItems = () => {
+    let total = 0;
+    cartItems.map((item) => {
+      total += item.quantity;
+    });
+    return total;
+  };
+
   // write function handle change of the quantity of each item
   const handleChange = (event, product, quantity) => {
     event.preventDefault();
@@ -96,7 +104,10 @@ function ShoppingCart() {
       ) : (
         <h2 className={styles.noItems}>No items</h2>
       )}
-      Total: £{totalPrice().toFixed(2)}
+      <div className={styles.totalWrapper}>
+        <p>Total number of Items: {totalItems()}</p>
+        <p>Total: £{totalPrice().toFixed(2)}</p>
+      </div>
     </div>
   );
 }
