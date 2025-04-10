@@ -1,5 +1,7 @@
 import styles from "./index.module.css";
 import Carousel from "../carousel/carousel";
+import useProduct from "../../productFetch";
+import { useNavigate } from "react-router";
 
 const contents = [
   {
@@ -29,6 +31,13 @@ const contents = [
 ];
 
 function Index() {
+  const { items, loading, error } = useProduct();
+  let navigate = useNavigate();
+
+  if (error) throw error;
+
+  const bestSellerItems = items.slice(0, 4);
+
   return (
     <div className={styles.indexWrapper}>
       <h1 className={styles.title}>TOA</h1>
@@ -57,6 +66,30 @@ function Index() {
         </p>
       </div>
       <Carousel contents={contents} />
+      <div className={styles.bestSeller}>
+        <h2>Best sellers</h2>
+
+        {loading && <h1 className={styles.shopLoading}>Loading...</h1>}
+        <div className={styles.BSWrapper}>
+          {bestSellerItems.map((item) => (
+            <div className={styles.BSCard}>
+              <h4 className={styles.BSTitle}>{item.title}</h4>
+              <img
+                src={item.image}
+                alt={item.title}
+                className={styles.BSImage}
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={() => {
+            navigate("/shop");
+          }}
+        >
+          Start Shopping Now!
+        </button>
+      </div>
     </div>
   );
 }

@@ -62,3 +62,47 @@
   padding: 3rem;
 }
 
+/* best Sellers */
+.bestSeller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 2rem 0;
+}
+
+.BSWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.BSCard {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.BSCard:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px, rgba(0, 0, 0, 0.2) 0px 4px 2px,
+    rgba(0, 0, 0, 0.2) 0px 8px 4px, rgba(0, 0, 0, 0.2) 0px 16px 8px,
+    rgba(0, 0, 0, 0.2) 0px 32px 16px;
+}
+
+.BSTitle {
+  padding: 1rem;
+  font-weight: 500;
+}
+
+.BSImage {
+  min-width: 150px;
+}
