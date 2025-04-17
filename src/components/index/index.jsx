@@ -73,7 +73,7 @@ function Index() {
         {loading && <h1 className={styles.shopLoading}>Loading...</h1>}
         <div className={styles.BSWrapper}>
           {bestSellerItems.map((item) => (
-            <div className={styles.BSCard}>
+            <div key={item.id} className={styles.BSCard}>
               <h4 className={styles.BSTitle}>{item.title}</h4>
               <img
                 src={item.image}

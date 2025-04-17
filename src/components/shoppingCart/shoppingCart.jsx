@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import styles from "./shoppingCart.module.css";
 import Button from "../../styles/Buttons.module.css";
+import React from "react";
 
 function ShoppingCart() {
   const { cartItems, setCartItems } = useOutletContext();
@@ -80,6 +81,7 @@ function ShoppingCart() {
                   id={item.id}
                   type="number"
                   name="quantity"
+                  data-testid="quantity-input-cart"
                   defaultValue={item.quantity}
                   className={styles.quantityInput}
                   min="1"

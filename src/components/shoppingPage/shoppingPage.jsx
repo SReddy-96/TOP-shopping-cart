@@ -1,9 +1,8 @@
 import { useOutletContext } from "react-router-dom";
-import ErrorPage from "../../error-page";
-import useProduct from "../../productFetch";
+import useProduct from "../../productFetch.jsx";
 import styles from "./shoppingPage.module.css";
 import Buttons from "../../styles/Buttons.module.css";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function ShoppingPage() {
   const { items, loading, error } = useProduct();
@@ -71,6 +70,7 @@ function ShoppingPage() {
                 name="quantity"
                 defaultValue="1"
                 min="1"
+                data-testid="quantity-input"
                 onChange={(e) => setQuantity(parseInt(e.target.value))}
               />
               <button
